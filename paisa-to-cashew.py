@@ -96,7 +96,7 @@ def add_starting_balance(transactions, accounts):
 
 def load_json_file(filepath):
     try:
-        with open(filepath, "r") as file:
+        with open(filepath, "r", encoding="utf-8-sig") as file:
             data = json.load(file)
             print("Successfully loaded the JSON file")
             return data
@@ -145,7 +145,7 @@ def add_names_to_transactions(
 
 
 def write_to_csv(filepath, transactions, fields):
-    with open(filepath, "w", newline="") as csv_file:
+    with open(filepath, "w", newline="", encoding="utf-8-sig") as csv_file:
         csv_writer = csv.writer(csv_file)
         csv_writer.writerow(fields)
         for transaction in transactions:
